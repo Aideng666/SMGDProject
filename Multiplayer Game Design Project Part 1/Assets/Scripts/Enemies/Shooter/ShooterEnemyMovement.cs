@@ -14,11 +14,6 @@ public class ShooterEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log((FindObjectOfType<PlayerController>().transform.position - transform.position).magnitude);
-        }
-
         if ((FindObjectOfType<PlayerController>().transform.position - transform.position).magnitude < viewDistance)
         {
             withinView = true;
@@ -39,13 +34,27 @@ public class ShooterEnemyMovement : MonoBehaviour
 
         if (withinView && !tooClose)
         {
-            Move();
+            MoveTowards();
+        }
+
+        if (tooClose)
+        {
+            MoveAway();
         }
     }
 
-    void Move()
+    void MoveTowards()
     {
         Vector3 moveDir = (FindObjectOfType<PlayerController>().transform.position - transform.position).normalized;
+
+        transform.position += moveDir * speed * Time.deltaTime;
+
+        transform.LookAt(FindObjectOfType<PlayerController>().transform.position);
+    }
+
+    void MoveAway()
+    {
+        Vector3 moveDir = -(FindObjectOfType<PlayerController>().transform.position - transform.position).normalized;
 
         transform.position += moveDir * speed * Time.deltaTime;
 
