@@ -7,8 +7,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Transform playerPos;
     [SerializeField] float freeCamRange = 2;
+    [SerializeField] float zCamOffset = -11;
 
-    float zCamOffset = -7;
 
 
     // Update is called once per frame
