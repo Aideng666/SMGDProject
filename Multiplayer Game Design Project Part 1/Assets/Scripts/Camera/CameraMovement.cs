@@ -9,8 +9,6 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float freeCamRange = 2;
     [SerializeField] float zCamOffset = -11;
 
-
-
     // Update is called once per frame
     void Update()
     {
