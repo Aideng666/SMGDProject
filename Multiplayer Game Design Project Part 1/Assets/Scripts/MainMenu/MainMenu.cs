@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("MainMenu");
+    }
     // Update is called once per frame
     void Update()
     {
