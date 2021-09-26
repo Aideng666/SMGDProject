@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -199,6 +200,11 @@ public class PlayerController : MonoBehaviour
             ApplyKnockback((transform.position - collision.transform.position).normalized);
 
             FindObjectOfType<Player>().TakeDamage(FindObjectOfType<ShooterEnemy>().GetDamage());
+        }
+
+        if (collision.gameObject.tag == "Platform")
+        {
+            SceneManager.LoadScene("Level Complete");
         }
     }
 
