@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
-    private int _health = 20;
+    [SerializeField] int _health = 20;
 
     // Update is called once per frame
     void Update()
