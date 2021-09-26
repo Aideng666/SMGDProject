@@ -14,7 +14,7 @@ public class MeleeEnemyMovement : MonoBehaviour
         {
             Vector3 moveDir = (FindObjectOfType<PlayerController>().transform.position - transform.position).normalized;
 
-            transform.position += moveDir * speed * Time.deltaTime;
+            GetComponent<Rigidbody>().AddForce(moveDir * speed);
 
             transform.LookAt(FindObjectOfType<PlayerController>().transform.position);
         }
