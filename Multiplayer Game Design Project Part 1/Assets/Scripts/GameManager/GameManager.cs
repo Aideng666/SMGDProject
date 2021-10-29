@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] List<GameObject> enemies;
+    [SerializeField] List<GameObject> powerupPrefabs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public List<GameObject> GetEnemies()
+    {
+        return enemies;
+    }
+
+    public void SpawnPowerup(Vector3 position)
+    {
+        int powerupChoice = Random.Range(0, 2);
+
+        Instantiate(powerupPrefabs[powerupChoice], position, Quaternion.Euler(new Vector3(90, 0, 0)));
     }
 }

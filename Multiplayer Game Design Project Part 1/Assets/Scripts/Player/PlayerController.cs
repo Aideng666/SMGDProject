@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
-    [SerializeField] float speed = 5;
     [SerializeField] float bulletSpeed = 20;
+    [SerializeField] float speed = 5;
     [SerializeField] float shootDelay = 0.5f;
     [SerializeField] float knockbackPower = 25;
     [SerializeField] int contactDamageRecieved = 10;
@@ -204,6 +204,13 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Platform")
         {
+            for (int i = 0; i < FindObjectOfType<GameManager>().GetEnemies().Count; i++)
+            {
+                if (FindObjectOfType<GameManager>().GetEnemies()[i] != null)
+                {
+                    return;
+                }
+            }
             SceneManager.LoadScene("Level Complete");
         }
     }
@@ -211,5 +218,20 @@ public class PlayerController : MonoBehaviour
     public float GetSpeed()
     {
         return speed;
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+
+    public float GetShotDelay()
+    {
+        return shootDelay;
+    }
+
+    public void SetShotDelay(float delay)
+    {
+        shootDelay = delay;
     }
 }
