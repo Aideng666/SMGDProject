@@ -16,5 +16,7 @@ public class CompanionMovement : MonoBehaviour
                                               0, player.transform.position.z - transform.position.z)
                                               * Time.deltaTime * player.GetComponent<PlayerController>().GetSpeed();
         }
+
+        transform.Rotate(new Vector3(0, 0.1f, 0));
     }
 }

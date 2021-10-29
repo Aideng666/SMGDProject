@@ -22,6 +22,13 @@ public class MeleeEnemy : MonoBehaviour
 
     void Die()
     {
+        int powerupChance = Random.Range(0, 10);
+
+        if (powerupChance == 0)
+        {
+            FindObjectOfType<GameManager>().SpawnPowerup(new Vector3(transform.position.x, 3, transform.position.z));
+        }
+
         Destroy(gameObject);
     }
 
