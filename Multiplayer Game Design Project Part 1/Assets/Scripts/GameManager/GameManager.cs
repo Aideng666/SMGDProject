@@ -30,4 +30,17 @@ public class GameManager : MonoBehaviour
 
         Instantiate(powerupPrefabs[powerupChoice], position, Quaternion.Euler(new Vector3(90, 0, 0)));
     }
+
+    public bool AllEnemiesDead()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i] != null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

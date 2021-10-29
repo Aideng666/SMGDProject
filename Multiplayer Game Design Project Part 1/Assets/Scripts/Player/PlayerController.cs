@@ -204,14 +204,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Platform")
         {
-            for (int i = 0; i < FindObjectOfType<GameManager>().GetEnemies().Count; i++)
+            if (FindObjectOfType<GameManager>().AllEnemiesDead())
             {
-                if (FindObjectOfType<GameManager>().GetEnemies()[i] != null)
-                {
-                    return;
-                }
+                SceneManager.LoadScene("Level Complete");
             }
-            SceneManager.LoadScene("Level Complete");
         }
     }
 

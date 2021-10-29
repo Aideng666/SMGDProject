@@ -63,6 +63,10 @@ public class CompanionShooting : MonoBehaviour
 
     bool CanShoot()
     {
+        if (FindObjectOfType<GameManager>().AllEnemiesDead())
+        {
+            return false;
+        }
         if (timeToNextShot < Time.realtimeSinceStartup)
         {
             timeToNextShot = Time.realtimeSinceStartup + shootDelay;
