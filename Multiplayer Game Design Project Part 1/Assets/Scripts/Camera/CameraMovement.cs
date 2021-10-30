@@ -9,6 +9,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float freeCamRange = 2;
     [SerializeField] float zCamOffset = -11;
 
+    void Start()
+    {
+        transform.position = new Vector3(playerPos.position.x, 25, playerPos.position.z + zCamOffset);
+    }
+
     // Update is called once per frame
     void Update()
     {

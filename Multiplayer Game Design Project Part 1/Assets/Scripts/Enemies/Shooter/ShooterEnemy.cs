@@ -28,7 +28,7 @@ public class ShooterEnemy : MonoBehaviour
 
         if (powerupChance == 0)
         {
-            FindObjectOfType<GameManager>().SpawnPowerup(new Vector3(transform.position.x, 3, transform.position.z));
+            FindObjectOfType<GameManager>().SpawnPowerup(new Vector3(transform.position.x, -3, transform.position.z));
         }
 
         Destroy(gameObject);
