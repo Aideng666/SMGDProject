@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!FindObjectOfType<AudioManager>().IsPlaying("Level1"))
+        {
+            FindObjectOfType<AudioManager>().Play("Level1");
+        }
     }
 
     public List<GameObject> GetEnemies()
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         int powerupChoice = Random.Range(0, 2);
 
-        Instantiate(powerupPrefabs[powerupChoice], position, Quaternion.Euler(new Vector3(90, 0, 0)));
+        Instantiate(powerupPrefabs[powerupChoice], position, Quaternion.Euler(new Vector3(0, 0, 0)));
     }
 
     public bool AllEnemiesDead()
