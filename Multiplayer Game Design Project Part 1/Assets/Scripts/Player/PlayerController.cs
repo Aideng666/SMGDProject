@@ -202,10 +202,11 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<Player>().TakeDamage(FindObjectOfType<ShooterEnemy>().GetDamage());
         }
 
-        if (collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Portal")
         {
             if (FindObjectOfType<GameManager>().AllEnemiesDead())
             {
+                FindObjectOfType<AudioManager>().Play("Portal");
                 SceneManager.LoadScene("Level Complete");
             }
         }
