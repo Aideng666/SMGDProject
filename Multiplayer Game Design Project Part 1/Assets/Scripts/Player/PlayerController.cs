@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 270, 0);
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 0)));
 
             bullet.GetComponent<Rigidbody>().velocity = Vector3.right * bulletSpeed;
 
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 90, 0);
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 180, 0)));
 
             bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
 
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 180, 0);
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, -90, 0)));
 
             bullet.GetComponent<Rigidbody>().velocity = Vector3.forward * bulletSpeed;
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, 90, 0)));
 
             bullet.GetComponent<Rigidbody>().velocity = Vector3.back * bulletSpeed;
 
