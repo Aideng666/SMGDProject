@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Level1");
+        FindObjectOfType<AudioManager>().Play("NewLevel");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!FindObjectOfType<AudioManager>().IsPlaying("Level1"))
+        if (!FindObjectOfType<AudioManager>().IsPlaying("Level1") && !FindObjectOfType<AudioManager>().IsPlaying("NewLevel"))
         {
             FindObjectOfType<AudioManager>().Play("Level1");
         }

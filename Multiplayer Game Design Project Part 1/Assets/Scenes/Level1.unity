@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.021999996, g: 0.011606444, b: 0.019579679, a: 1}
+  m_IndirectSpecularColor: {r: 0.021663688, g: 0.01136612, b: 0.01931896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1755,6 +1755,21 @@ MonoBehaviour:
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: a786ccf7bee1e81449cce236439d7754, type: 3}
     name: Level1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 8201755345bfa864e8615aeb5d11e9a7, type: 3}
+    name: Shoot
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 6da23dea53432764d9784872a5f47a8f, type: 3}
+    name: Portal
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b803cf1d369fdf14b9ecddc87c34e2da, type: 3}
+    name: NewLevel
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -7542,6 +7557,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2067924163901029223, guid: c579a55926fb63a4ca48e055c63fbf9b, type: 3}
       propertyPath: m_Name
+      value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067924163901029223, guid: c579a55926fb63a4ca48e055c63fbf9b, type: 3}
+      propertyPath: m_TagString
       value: Portal
       objectReference: {fileID: 0}
     m_RemovedComponents: []

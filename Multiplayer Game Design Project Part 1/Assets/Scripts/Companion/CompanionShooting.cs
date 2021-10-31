@@ -53,12 +53,15 @@ public class CompanionShooting : MonoBehaviour
 
         if (Vector3.Distance(transform.position, enemyList[closestEnemyIndex].transform.position) <= shootDistance)
         {
+            FindObjectOfType<AudioManager>().Play("Shoot");
+
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 0)));
 
             bullet.GetComponent<Rigidbody>().velocity = (enemyList[closestEnemyIndex].transform.position - transform.position).normalized * bulletSpeed;
 
             Destroy(bullet, 5);
         }
+
     }
 
     bool CanShoot()
