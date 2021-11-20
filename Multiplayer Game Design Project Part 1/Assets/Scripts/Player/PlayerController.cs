@@ -19,6 +19,13 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody body;
 
+    [SerializeField] Joystick moveStick;
+    float jHorizontal = 0f;
+    float jVertical = 0f;
+    Vector3 direction;
+    public float turnSmoothTime = 0.1f;
+    Vector3 moveDir;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -27,9 +34,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        JoystickMove();
 
-        Move();
+        //Shoot();
+
+        //Move();
+    }
+
+    void JoystickMove()
+    {
+        jHorizontal = moveStick.Horizontal * speed;
+        jVertical = moveStick.Vertical * speed;
+        direction = new Vector3(jHorizontal, 0f, jVertical).normalized;
+        
+        if (direction.magnitude >= 0.1f)
+        {
+            transform.rotation = Quaternion.LookRotation(-direction);
+
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        
+            transform.position += (moveDir.normalized * speed * Time.deltaTime);
+        }
     }
 
     void Move()
