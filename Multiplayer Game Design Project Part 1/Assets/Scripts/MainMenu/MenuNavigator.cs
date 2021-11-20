@@ -74,4 +74,28 @@ public class MenuNavigator : MonoBehaviour
             SceneManager.LoadScene("Level1");
         }
     }
+
+    public void StartButton()
+    {
+        if (mainMenu)
+        {
+            SceneManager.LoadScene("Level1");
+        }    
+    }
+
+    public void FailedRetryButton()
+    {
+        if (levelFailed)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+    }
+
+    public void WinButton()
+    {
+        if (levelComplete)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+    }
 }

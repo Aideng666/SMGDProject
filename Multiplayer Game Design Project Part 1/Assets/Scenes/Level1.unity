@@ -9140,9 +9140,21 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 4086994148572505580, guid: f11f6264a634f7f4e886db6767f21444, type: 3}
+    - target: {fileID: 5254454867947779937, guid: 70760719d0916f448b27eccf21153f7f, type: 3}
+      propertyPath: knockbackPower
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254454867947779937, guid: 70760719d0916f448b27eccf21153f7f, type: 3}
+      propertyPath: contactDamageRecieved
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5254454867947779941, guid: 70760719d0916f448b27eccf21153f7f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254454867947779942, guid: 70760719d0916f448b27eccf21153f7f, type: 3}
+      propertyPath: _damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5254454867969278403, guid: 70760719d0916f448b27eccf21153f7f, type: 3}
       propertyPath: m_IsActive
