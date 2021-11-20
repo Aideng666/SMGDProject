@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform bulletSpawn;
-    [SerializeField] float bulletSpeed = 20;
+    //[SerializeField] GameObject bulletPrefab;
+    //[SerializeField] Transform bulletSpawn;
+    //[SerializeField] float bulletSpeed = 20;
     [SerializeField] float speed = 5;
     [SerializeField] float shootDelay = 0.5f;
     [SerializeField] float knockbackPower = 25;
     [SerializeField] int contactDamageRecieved = 10;
 
-    float timeToNextShot = 0;
+    //float timeToNextShot = 0;
 
-    bool isShooting = false;
+    //bool isShooting = false;
 
     Rigidbody body;
 
@@ -58,83 +58,83 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Move()
-    {
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
-        {
-            transform.position += (Vector3.forward + Vector3.left) * speed * Time.deltaTime;
+    //void Move()
+    //{
+    //    if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+    //    {
+    //        transform.position += (Vector3.forward + Vector3.left) * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 135, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+    //    {
+    //        transform.position += (Vector3.forward + Vector3.right) * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 225, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+    //    {
+    //        transform.position += (Vector3.back + Vector3.left) * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 45, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+    //    {
+    //        transform.position += (Vector3.back + Vector3.right) * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 315, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.W))
+    //    {
+    //        transform.position += Vector3.forward * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 180, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.S))
+    //    {
+    //        transform.position += Vector3.back * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 0, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.A))
+    //    {
+    //        transform.position += Vector3.left * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 90, 0);
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.D))
+    //    {
+    //        transform.position += Vector3.right * speed * Time.deltaTime;
+    //
+    //        if (!isShooting)
+    //        {
+    //            transform.rotation = Quaternion.Euler(0, 270, 0);
+    //        }
+    //    }
+    //}
 
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 135, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
-        {
-            transform.position += (Vector3.forward + Vector3.right) * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 225, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-        {
-            transform.position += (Vector3.back + Vector3.left) * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 45, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
-        {
-            transform.position += (Vector3.back + Vector3.right) * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 315, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += Vector3.back * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 90, 0);
-            }
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-
-            if (!isShooting)
-            {
-                transform.rotation = Quaternion.Euler(0, 270, 0);
-            }
-        }
-    }
-
-    void Shoot()
+    /*void Shoot()
     {
         if (Input.GetKey(KeyCode.RightArrow) && CanShoot())
         {
@@ -192,9 +192,9 @@ public class PlayerController : MonoBehaviour
         {
             isShooting = false;
         }
-    }
+    }*/
 
-    bool CanShoot()
+    /*bool CanShoot()
     {
         if (timeToNextShot < Time.realtimeSinceStartup)
         {
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-    }
+    }*/
 
     void ApplyKnockback(Vector3 direction)
     {
