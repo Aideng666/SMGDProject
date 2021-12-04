@@ -1767,6 +1767,26 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 7d3beec01565d1341a588b9727e81cbd, type: 3}
+    name: EnemyDeath
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ce819bd4f5e956d4994dae65fe1d315c, type: 3}
+    name: TakeDamage
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: dfa8c14af9c7e8c4cb86d6159700729c, type: 3}
+    name: EyeballShoot
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b09537a6aab7da348bd724ab0e5838d4, type: 3}
+    name: EnemyDamage
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &594035522
 Transform:
   m_ObjectHideFlags: 0

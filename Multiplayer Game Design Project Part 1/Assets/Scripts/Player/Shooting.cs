@@ -20,6 +20,8 @@ public class Shooting : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, -90, 0)));
             bullet.GetComponent<Rigidbody>().velocity = Vector3.forward * bulletSpeed;
             Destroy(bullet, 5);
+
+            FindObjectOfType<AudioManager>().Play("Shoot");
         } 
     }
     
@@ -32,6 +34,8 @@ public class Shooting : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(90, 90, 0)));
             bullet.GetComponent<Rigidbody>().velocity = Vector3.back * bulletSpeed;
             Destroy(bullet, 5);
+
+            FindObjectOfType<AudioManager>().Play("Shoot");
         } 
     }
     
@@ -44,6 +48,8 @@ public class Shooting : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 180, 0)));
             bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
             Destroy(bullet, 5);
+
+            FindObjectOfType<AudioManager>().Play("Shoot");
         }
     }
     
@@ -56,6 +62,8 @@ public class Shooting : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             bullet.GetComponent<Rigidbody>().velocity = Vector3.right * bulletSpeed;
             Destroy(bullet, 5);
+
+            FindObjectOfType<AudioManager>().Play("Shoot");
         }   
     }
 

@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health -= damage;
+
+        FindObjectOfType<AudioManager>().Play("TakeDamage");
     }
 
     void Die()

@@ -20,6 +20,8 @@ public class ShooterEnemy : MonoBehaviour
     void TakeDamage(int damage)
     {
         _health -= damage;
+
+        FindObjectOfType<AudioManager>().Play("EnemyDamage");
     }
 
     void Die()
@@ -32,6 +34,8 @@ public class ShooterEnemy : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
     }
 
     void OnCollisionEnter(Collision collision)

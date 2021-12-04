@@ -18,6 +18,8 @@ public class MeleeEnemy : MonoBehaviour
     void TakeDamage(int damage)
     {
         _health -= damage;
+
+        FindObjectOfType<AudioManager>().Play("EnemyDamage");
     }
 
     void Die()
@@ -30,6 +32,8 @@ public class MeleeEnemy : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
     }
 
     void OnCollisionEnter(Collision collision)
