@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         
         if (direction.magnitude >= 0.1f)
         {
-            transform.rotation = Quaternion.LookRotation(-direction);
+            transform.rotation = Quaternion.LookRotation(direction);
 
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
